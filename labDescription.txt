@@ -1,0 +1,12 @@
+032008914
+000000003
+007100026
+008076000
+921300087
+060000400
+000000000
+000040508
+800607000
+
+The goal of this lab is to create a templated sudoku board class
+and to create a playable game of sudoku.
