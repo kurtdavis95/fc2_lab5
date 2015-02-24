@@ -2,6 +2,9 @@ Kurt Davis
 2/24/15
 Lab 5 Report
 
+	Browser URL for git repository:
+	https://github.com/kurtdavis95/fc2_lab5
+
 	The sudoku program starts by displaying the two unsolved sudoku boards, then starting play of the first
 integer puzzle. The user interacts with the programming by entering the x and y coordinates of a cell on the board,
 then entering the value they would like to try placing. The value will either be placed or the program will tell 
