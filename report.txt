@@ -1,0 +1,33 @@
+Kurt Davis
+2/24/15
+Lab 5 Report
+
+	The sudoku program starts by displaying the two unsolved sudoku boards, then starting play of the first
+integer puzzle. The user interacts with the programming by entering the x and y coordinates of a cell on the board,
+then entering the value they would like to try placing. The value will either be placed or the program will tell 
+the user the reason it cannot be placed. Only empty cells with a 0 can be changed in this implementation, so the
+user cannot change values after they have been placed. If the board is completed, the program detects it and ends
+gameplay. Otherwise, the player exits by entering -1 for any of the input prompts.
+	Internally, the program works by reading in a board from the file specified in the Puzzle constructor. The
+constructor uses the template data type to determine how the values should be entered into the 2D board vector. 
+Characters are entered normally, while integers have the ASCII value for '0' subtracted from the character values.
+After the board is initialized, the play() function can be called. This function enters a loop that continues 
+asking the player for moves until the game is finished or the player quits. To handle input and value placement,
+the play function uses a group of private helper functions, including getInput, which prompts the user for input,
+checks if the input corresponds to a valid move, and executes that move. checkHori(), checkVert(), and checkGrid()
+test the validity of a move. Finally, play() uses the checkBoard() function to determine if the game is complete.
+To do this, it uses the fact that the sum of all values in each row, column, and grid must all equal 45 in order
+for the game to be valid and complete.
+	The program was verified by testing for correct move placement, invalid move detection, and detection of
+complete boards. The provided game layout in the lab document was used to ensure that non-zero cells are not 
+modifiable, moves are placed at the correct coordinates, and the game would detect and properly report the reasons
+for invalid moves. Finally, complete boards were provided to the program to ensure that it would correctly decide
+whether or not a game was finished.
+	For the most part, the implementation of the game works well doing what it is written to do. Some code that
+works particularly well include the functions to check the board for values in rows, columns, and grids. For the 
+latter, I found that C's truncation of integer division makes it easy to iterate through a particular mini-grid,
+as the coordinates for the top left corner of each mini-grid result from the truncation of [0-8]/3 (for both
+the columns and rows). One pitfall of the program is the inability for to detect which values were built into the
+board and which were added by the player. One solution that would be added for the next lab if such functionality
+is required would be an additional board vector to keep track of boolean flags for the modifiability of each cell.
+	
